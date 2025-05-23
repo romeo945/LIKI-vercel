@@ -11,7 +11,7 @@ export default function App() {
   const handleGenerateQr = async () => {
     setIsLoading(true);
     // Replace with actual backend call to get QR data
-    const response = await fetch('https://your-backend-url.com/api/get-qr');
+    const response = await fetch('https://liki-md.onrender.com/api/get-qr');
     const data = await response.json();
     setQrData(data.qr);
     setIsLoading(false);
@@ -20,7 +20,7 @@ export default function App() {
   const handleGetPairingCode = async () => {
     setIsLoading(true);
     // Replace with actual backend call to get pairing code
-    const response = await fetch('https://your-backend-url.com/api/get-code', {
+    const response = await fetch('https://liki-md.onrender.com/api/get-code', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ phone })
@@ -33,7 +33,7 @@ export default function App() {
   const handleConnect = async () => {
     setIsLoading(true);
     // Replace with actual backend call to initiate connection
-    const response = await fetch('https://your-backend-url.com/api/connect', {
+    const response = await fetch('https://liki-md.onrender.com/api/connect', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ phone, code: pairingCode })
